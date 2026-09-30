@@ -1,10 +1,14 @@
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Toto je můj webový server!"
+    return f"""
+    Toto je můj webový server!!!
+    <br>
+    <a href="{url_for('about_school')}">O škole</a>
+    """
 
 @app.route('/o-skole')
 def about_school():
